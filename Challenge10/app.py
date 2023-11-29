@@ -51,7 +51,8 @@ def welcome():
         f"/api/v1.0/precipitation<br/>"
         f"/api/v1.0/stations<br/>"
         f"/api/v1.0/tobs<br/>"
-        f"/api/v1.0/temp<br/>"
+        f"/api/v1.0/<start><br/>"
+        f"/api/v1.0/<start>/<end><br/>"
     )
 
 @app.route("/api/v1.0/precipitation")
@@ -104,7 +105,7 @@ def tobs():
 
   return jsonify(dict(tobs))
 
-@app.route("/api/v1.0/temp")
+@app.route("/api/v1.0/<start>")
 def temp():
 
    # Using the most active station id from the previous query, calculate the lowest, highest, and average temperature.
